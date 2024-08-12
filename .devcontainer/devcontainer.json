@@ -1,0 +1,11 @@
+{
+    "customizations": {
+      "codespaces": {
+        "repositories": {
+          "slrwin/plugin.program.desiwizard": {
+            "permissions": "write-all"
+          }
+        }
+      }
+    }
+  }
