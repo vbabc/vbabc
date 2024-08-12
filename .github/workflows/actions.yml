@@ -1,0 +1,47 @@
+name: run GetAddons.py
+
+on:
+  # workflow_dispatch
+   schedule:
+     - cron: '*/30 * * * *' #Every 30mins
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout repo content
+        uses: actions/checkout@main # checkout the repository content to github runner
+
+      - name: setup python
+        uses: actions/setup-python@main
+        with:
+          python-version: '3.11' # install the python version needed
+          
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: execute getaddons script # run main.py
+        # env:
+        #   SOME_SECRET: ${{ secrets.MY_SECRET }}
+        run: python GetAddons.py
+
+      - name: execute repo generator script # run main.py
+        # env:
+        #   SOME_SECRET: ${{ secrets.MY_SECRET }}
+        run: python _repo_generator.py
+          
+      - name: commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "updated repo" --allow-empty)
+          
+      - name: push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master 
