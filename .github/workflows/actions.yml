@@ -1,47 +1,79 @@
-name: run GetAddons.py
+name: Run GetAddons.py
 
 on:
-  # workflow_dispatch
-   schedule:
-     - cron: '*/30 * * * *' #Every 30mins
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *' # Every 30 minutes
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9, 3.10, 3.11] # Test across multiple Python versions
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: checkout repo content
-        uses: actions/checkout@main # checkout the repository content to github runner
-
-      - name: setup python
-        uses: actions/setup-python@main
+      - name: Set up Python
+        uses: actions/setup-python@v3
         with:
-          python-version: '3.11' # install the python version needed
+          python-version: ${{ matrix.python-version }}
           
-      - name: install python packages
+      - name: Cache Python packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-python-${{ matrix.python-version }}-dependencies
+          restore-keys: |
+            ${{ runner.os }}-python-${{ matrix.python-version }}-dependencies
+
+      - name: Install Python packages
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: execute getaddons script # run main.py
-        # env:
-        #   SOME_SECRET: ${{ secrets.MY_SECRET }}
-        run: python GetAddons.py
-
-      - name: execute repo generator script # run main.py
-        # env:
-        #   SOME_SECRET: ${{ secrets.MY_SECRET }}
-        run: python _repo_generator.py
+      - name: Run GetAddons script
+        run: |
+          python GetAddons.py || { echo 'GetAddons.py failed'; exit 1; }
+        
+      - name: Run repo generator script
+        run: |
+          python _repo_generator.py || { echo '_repo_generator.py failed'; exit 1; }
           
-      - name: commit files
+      - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "updated repo" --allow-empty)
-          
-      - name: push changes
-        uses: ad-m/github-push-action@master
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Update repository - ${GITHUB_RUN_ID}" --allow-empty
+          else
+            echo "No changes to commit."
+          fi
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master 
+          branch: main
+
+      - name: Upload logs
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: logs
+          path: |
+            **/*.log
+
+      - name: Notify on failure
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue = await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `:warning: Workflow failed! Check the logs for details.`
+            });
