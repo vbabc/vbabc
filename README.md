@@ -1,6 +1,6 @@
 # <a href="https://kodi.tv/download" target="_blank" rel="noopener noreferrer">Download Kodi</a>
 
-# vbabc Repo - Omega DesiBuild
+# vbabc Repo - Omega
 
 ## Current Version: 1.0.0
 
