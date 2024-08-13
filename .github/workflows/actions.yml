@@ -1,9 +1,15 @@
 name: run GetAddons.py
 
-#on:
-  # workflow_dispatch
+on:
+  #workflow_dispatch
   #schedule:
   #  - cron: '*/30 * * * *' #Every 30mins
+  workflow_dispatch:
+    inputs:
+      example-input:
+        description: 'Run Manually'
+        required: false
+        default: 'Manual'
 
 jobs:
   build:
