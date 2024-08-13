@@ -2,9 +2,9 @@
 <addon id="repository.vbabc" name="vbabc Repo" version="1.0.1" provider-name="vbabc">
 	<extension point="xbmc.addon.repository" name="vbabc">
 		<dir>
-			<info compressed="false">https://raw.githubusercontent.com/vbabc/vbabc/master/repo/zips/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/vbabc/vbabc/master/repo/zips/addons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/vbabc/vbabc/master/repo/zips/</datadir>
+			<info compressed="false">https://raw.githubusercontent.com/vbabc/vbabc/main/repo/zips/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/vbabc/vbabc/main/repo/zips/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/vbabc/vbabc/main/repo/zips/</datadir>
 		</dir>
 		<dir minversion="19.0">
             <info compressed="false">https://tobalan.github.io/addons.xml</info>
