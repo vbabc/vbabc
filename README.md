@@ -16,7 +16,7 @@ Instructions for adding this repo:
     <li>Click on "Add source"</li>
     <li>The path for the source is <code>https://vbabc.github.io/vbabc</code> (Give it the name "vbabc Repo").</li>
     <li>Go to "Kodi Settings>Addons"</li>
-    <li>In Addons, install an addon from zip.  When it asks for the location, select "vbabc Repo", and install <a href="repository.vbabc-1.0.0.zip">repository.vbabc-1.0.0.zip</a>.</li>
+    <li>In Addons, install an addon from zip.  When it asks for the location, select "vbabc Repo", and install <a href="repository.vbabc-1.0.1.zip">repository.vbabc-1.0.1.zip</a>.</li>
     <li>Go back to Addons install, but this time, select "Install from repository"</li>
     <li>Select the "vbabc Repo"</li>
     <li>Install the addons you need from the vbabc Repository</li>    
