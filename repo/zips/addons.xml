@@ -100,7 +100,7 @@
         </assets>
         <news>INFO: For latest changes see Changelog within Tools of add-on.</news>
     </extension>
-</addon><addon id="plugin.video.jiotv" name="JioTV" version="2.3.9" provider-name="vbabc">
+</addon><addon id="plugin.video.jiotv" name="JioTV" version="2.3.12" provider-name="kiranreddyrebel">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.codequick" version="1.0.2" />
@@ -108,7 +108,6 @@
         <import addon="inputstream.adaptive" minversion="2.6.6" />
         <import addon="script.module.m3u8" version="0.5.4" />
         <import addon="script.module.requests" version="2.27.1" />
-        
     </requires>
     <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>video</provides>
@@ -121,10 +120,14 @@
         <platform>all</platform>
         <license>MIT</license>
         <forum>https://botallen.com/discord</forum>
-        <website>https://tobalan.github.io</website>
+        <website>https://kiranreddyrebel.github.io</website>
         <email>kodi@botallen.com</email>
-        <source>https://github.com/tobalan/plugin.video.jiotv</source>
+        <source>https://github.com/kiranreddyrebel/plugin.video.jiotv</source>
         <news>
+	    [- 2.3.11 -]
+            [added] Fixed type (mpd or hls)-reverted to back to earlier
+            [- 2.3.10 -]
+            [added] Fixed inputstream.adaptive header
             [- 2.3.9 -]
             [added] Revamped settings.xml and added strings.po
 
@@ -206,11 +209,6 @@
 			<checksum>https://raw.githubusercontent.com/vbabc/vbabc/main/repo/zips/addons.xml.md5</checksum>
 			<datadir zip="true">https://raw.githubusercontent.com/vbabc/vbabc/main/repo/zips/</datadir>
 		</dir>
-		<dir minversion="19.0">
-            <info compressed="false">https://tobalan.github.io/addons.xml</info>
-            <checksum>https://tobalan.github.io/addons.xml.md5</checksum>
-            <datadir zip="true">https://tobalan.github.io/Zips</datadir>
-        </dir>
 	    <dir>
             <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/repo/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/repo/zips/addons.xml.md5</checksum>
