@@ -1,6 +1,6 @@
 name: run GetAddons.py
 
-on:
+#on:
   # workflow_dispatch
   #schedule:
   #  - cron: '*/30 * * * *' #Every 30mins
