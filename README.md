@@ -1,40 +1,48 @@
-# <a href="https://kodi.tv/download" target="_blank" rel="noopener noreferrer">Download Kodi</a>
+# 🛠️ vbabc — Building Practical Systems
 
-# vbabc Repo - Omega
+**Software Developer • Streaming Tools • Self-Hosted Infrastructure**
 
-## Current Version: 1.0.1
+I build tools around media workflows, APIs, automation, and the systems that run them. My work spans browser playback, playlist processing, container deployments, and Salesforce development.
 
-## Repository addon
+## 🛠️ Tech Stack & Languages
 
-Instructions for adding this repo:
+**Languages**
 
-<img align="left" src="icon.png" width="256" hspace="48" title="Sunny Kodi Repository">
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white) ![Apex](https://img.shields.io/badge/Apex-00A1E0?style=flat-square&logo=salesforce&logoColor=white)
 
-<p align="right">
-  <ul>
-    <li>Go to the Kodi file manager.</li>
-    <li>Click on "Add source"</li>
-    <li>The path for the source is <code>https://vbabc.github.io/vbabc</code> (Give it the name "vbabc Repo").</li>
-    <li>Go to "Kodi Settings>Addons"</li>
-    <li>In Addons, install an addon from zip.  When it asks for the location, select "vbabc Repo", and install <a href="repository.vbabc-1.0.1.zip">repository.vbabc-1.0.1.zip</a>.</li>
-    <li>Go back to Addons install, but this time, select "Install from repository"</li>
-    <li>Select the "vbabc Repo"</li>
-    <li>Install the addons you need from the vbabc Repository</li>    
-  </ul>
-</p>
+**Infrastructure & tools**
 
-About the Desi Build Addons:
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black) ![Proxmox](https://img.shields.io/badge/Proxmox-E57000?style=flat-square&logo=proxmox&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 
-<p>
-<ul>
-<li></li>
-<li>For watched progress add trakt account via settings of addon.</li>
-<li>For better quality links and uninterrupted streaming RealDebrid is needed with majority of Kodi addons.</li>
-<li>If you plan to get RealDebrid then install the Umbrella or Seren or Fen or Fen Light addons from Addon repository in the Kodi. These 3 addons RealDebrid only addons with better support from developers.</li>
-<li>If you plan to continue with Free Links please use a VPN to anonymize your IP.</li>
-<li><a href="http://real-debrid.com/?id=9676836" target="_blank" rel="noopener noreferrer">Real Debrid</a> is a Premium Downloader</li>
-<li><a href="https://trakt.tv/" target="_blank" rel="noopener noreferrer">Trakt</a> will help in tracking the watched Progress and creating collections, Lists of users favorite shows</li>
-</ul>
-</p>
+## 🔥 Recent Projects
 
-## Enjoy!
+| Project | Description | Tech stack |
+| --- | --- | --- |
+| Browser playback tools | Playback workflows, watch history, and resume support | JavaScript, PHP |
+| Playlist & API tooling | Playlist processing and service integrations | PHP, Python |
+| Self-hosted services | Container deployments and operational workflows | Docker, Linux, LXC |
+| Salesforce workflows | Apex logic and Case-related development | Apex, Salesforce |
+
+*Selected areas of work; some projects are private.*
+
+## 📊 GitHub Stats
+
+![vbabc’s GitHub stats](https://github-readme-stats.vercel.app/api?username=vbabc&show_icons=true&hide_border=true&theme=transparent)
+
+## 👀 Profile Views
+
+![Profile views](https://komarev.com/ghpvc/?username=vbabc&style=flat-square&color=blue)
+
+## 🏆 Badges & Achievements
+
+- Built tools for browser playback and streaming workflows.
+- Deployed and maintained services using containers and self-hosted infrastructure.
+- Developed automation and documentation for repeatable operations.
+
+## 🔗 Connect With Me
+
+[Explore my GitHub repositories](https://github.com/vbabc?tab=repositories)
+
+## ⚡ Technical Fun Fact
+
+A small playback or API issue can lead through the browser, service code, container, and host. I enjoy tracing the whole path.
